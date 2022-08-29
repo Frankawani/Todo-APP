@@ -5,9 +5,11 @@ import App from "./App";
 import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import ThemeReducer from "./Reducers/ThemeReducer";
+import ToDoReducer from "./Reducers/ToDoReducer";
 
 const rootReducer = combineReducers({
   ThemeReducer,
+  ToDoReducer
 })
 
 const Store = createStore(rootReducer);
