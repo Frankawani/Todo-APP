@@ -29,7 +29,7 @@ const AddTodoItem = () => {
 
   return (
     <input
-      className={`w-full px-7 py-2 rounded-sm mt-6 focus:outline-none text-very-dark-grayish-blue ${isLight ? "bg-white" : "bg-black"}`}
+      className={`w-full px-7 py-2 rounded-sm mt-6 focus:outline-none text-sm ${isLight ? "text-very-dark-grayish-blue bg-white" : "text-light-grayish-blue bg-very-dark-desaturated-blue"}`}
       type="text"
       placeholder="Create a new todo..."
       value={todo}

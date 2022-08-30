@@ -39,6 +39,12 @@ function ToDoReducer(state = INITIAL_STATE, action) {
         ),
       };
     }
+    case "UPDATE_TODOLIST": {
+      return {
+        ...state,
+        toDoList: action.payload
+      };
+    }
     default:
       return state;
   }

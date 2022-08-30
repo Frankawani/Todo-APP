@@ -14,9 +14,9 @@ module.exports = {
         'light-grey': 'hsl(0, 0%, 98%)',
         'first': 'hsl(192, 100% , 67%)',
         'second': 'hsl(280, 87%, 65%)',
-        'grey': 'hsl(234, 11%, 52%)'
-
-
+        'grey': 'hsl(234, 11%, 52%)',
+        'very-dark-blue': 'hsl(235, 21%, 11%)',
+        'very-dark-desaturated-blue': 'hsl(235, 24%, 19%)',
       },
       fontFamily: {
         'josefin': 'Josefin Sans, sans-serif'
