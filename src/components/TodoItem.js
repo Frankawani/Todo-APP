@@ -6,8 +6,9 @@ import { useSelector, useDispatch } from "react-redux";
 const TodoItem = ({ id, todo, isCompleted }) => {
   const [isChecked, setIsChecked] = useState(isCompleted);
   const dispatch = useDispatch();
-  const { isLight } = useSelector((state) => ({
+  const { isLight, toDoList } = useSelector((state) => ({
     ...state.ThemeReducer,
+    ...state.ToDoReducer
   }));
 
   const toggleChecked = () => {
@@ -20,6 +21,15 @@ const TodoItem = ({ id, todo, isCompleted }) => {
       },
     });
   };
+
+  const removeTodo = () => {
+    dispatch({
+        type: "REMOVE_TODO",
+        payload: {
+          id: id
+        },
+      });
+  }
 
   return (
     <div className="flex px-6 py-4 justify-between">
@@ -50,7 +60,7 @@ const TodoItem = ({ id, todo, isCompleted }) => {
           {todo}
         </p>
       </div>
-      <button className="justify-self-end">
+      <button className="justify-self-end" onClick={() => removeTodo()}>
         <img src={crossIcon} alt="" />
       </button>
     </div>

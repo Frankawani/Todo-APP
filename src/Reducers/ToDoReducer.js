@@ -17,7 +17,7 @@ function ToDoReducer(state = INITIAL_STATE, action) {
         ],
       };
     }
-    
+
     case "CHECK_TODO": {
       const itemId = action.payload.id;
       return {
@@ -26,6 +26,16 @@ function ToDoReducer(state = INITIAL_STATE, action) {
           todo.id === itemId
             ? { ...todo, isCompleted: action.payload.isCompleted }
             : todo
+        ),
+      };
+    }
+
+    case "REMOVE_TODO": {
+      const itemId = action.payload.id;
+      return {
+        ...state,
+        toDoList: state.toDoList.filter((todo) =>
+          todo.id !== itemId
         ),
       };
     }

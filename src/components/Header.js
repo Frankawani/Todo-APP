@@ -15,7 +15,6 @@ const Header = () => {
       type: "TOGGLE",
     });
   };
-  console.log(isLight);
 
   return (
     <div className="flex justify-between align-center">
