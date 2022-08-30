@@ -4,7 +4,10 @@ import iconSun from "../assets/images/icon-sun.svg";
 import iconMoon from "../assets/images/icon-moon.svg";
 
 const Header = () => {
-  const isLight = useSelector((state) => state.isLight);
+  
+  const { isLight } = useSelector((state) => ({
+    ...state.ThemeReducer,
+  }));
   const dispatch = useDispatch();
 
   const changeTheme = () => {
@@ -12,6 +15,7 @@ const Header = () => {
       type: "TOGGLE",
     });
   };
+  console.log(isLight);
 
   return (
     <div className="flex justify-between align-center">

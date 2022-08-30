@@ -11,10 +11,10 @@ const TodoList = () => {
   if (toDoList.length === 0) {
     return <h1 className="text-light-grey mt-5">List is empty</h1>;
   }
-  
+
   return (
     <div
-      className={`h-fit ${isLight ? "bg-white" : "bg-black"} mt-8 rounded-sm`}
+      className={`h-fit ${isLight ? "bg-white" : "bg-black"} mt-8 rounded-sm shadow-lg`}
     >
       {toDoList
         .map((item) => {

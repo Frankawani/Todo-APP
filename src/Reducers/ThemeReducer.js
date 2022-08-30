@@ -10,8 +10,8 @@ function ThemeReducer(state = INITIAL_STATE, action) {
                 isLight : !state.isLight
             }
         }
+        default: return state
     }
-    return state;
 }
 
 export default ThemeReducer;
