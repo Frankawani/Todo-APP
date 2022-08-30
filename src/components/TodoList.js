@@ -36,7 +36,7 @@ const TodoList = () => {
           <ul
             {...provided.droppableProps}
             ref={provided.innerRef}
-            className={`h-fit ${
+            className={`min-h-fit ${
               isLight
                 ? "bg-white divide-slate-300"
                 : "bg-very-dark-desaturated-blue divide-slate-700"
