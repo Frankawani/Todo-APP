@@ -16,7 +16,7 @@ const AddTodoItem = () => {
     const item = {
       id: toDoList.length + 1,
       todo: todo,
-      status: "active",
+      status: true,
     };
 
     dispatch({

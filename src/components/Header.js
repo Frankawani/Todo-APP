@@ -1,19 +1,17 @@
 import React from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 import iconSun from "../assets/images/icon-sun.svg";
 import iconMoon from "../assets/images/icon-moon.svg";
 
 const Header = () => {
+  const isLight = useSelector((state) => state.isLight);
+  const dispatch = useDispatch();
 
-    const isLight = useSelector(state => state.isLight);
-    const dispatch = useDispatch();
-
-    const changeTheme = () => {
-        dispatch({
-            type: 'TOGGLE'
-        })
-    }
-
+  const changeTheme = () => {
+    dispatch({
+      type: "TOGGLE",
+    });
+  };
 
   return (
     <div className="flex justify-between align-center">

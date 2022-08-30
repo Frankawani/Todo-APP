@@ -9,7 +9,13 @@ module.exports = {
         'primary': 'hsl(220, 98%, 61%)',
         'check-background': 'linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)',
         'dark-grayish-blue': 'hsl(236, 9%, 61%)',
+        'light-grayish-blue': 'hsl(233, 11%, 84%)',
         'very-dark-grayish-blue': 'hsl(235, 19%, 35%)',
+        'light-grey': 'hsl(0, 0%, 98%)',
+        'first': 'hsl(192, 100% , 67%)',
+        'second': 'hsl(280, 87%, 65%)',
+        'grey': 'hsl(234, 11%, 52%)'
+
 
       },
       fontFamily: {
