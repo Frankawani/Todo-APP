@@ -47,7 +47,7 @@ const TodoList = () => {
                 <Draggable key={item.id} draggableId={item.todo} index={index}>
                   {(provided) => (
                     <li
-                    className="bg-white"
+                    className={isLight ? "bg-white" : "bg-very-dark-desaturated-blue"}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                       ref={provided.innerRef}
