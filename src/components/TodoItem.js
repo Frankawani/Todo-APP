@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 import checkedIcon from "../assets/images/icon-check.svg";
 import crossIcon from "../assets/images/icon-cross.svg";
-import { useSelector, useDispatch } from "react-redux";
 
 const TodoItem = ({ id, todo, isCompleted }) => {
   const [isChecked, setIsChecked] = useState(isCompleted);
+
+
   const dispatch = useDispatch();
   const { isLight } = useSelector((state) => ({
     ...state.ThemeReducer
   }));
 
   const toggleChecked = () => {
-    setIsChecked(!isChecked);
+    setIsChecked((prevValue) => {
+      return !prevValue;
+    });
+  };
+
+  const changeStatus = () => {
     dispatch({
       type: "CHECK_TODO",
       payload: {
@@ -21,20 +29,25 @@ const TodoItem = ({ id, todo, isCompleted }) => {
     });
   };
 
+  const todoAction =  () => {
+     toggleChecked()
+     changeStatus()
+  }
+
   const removeTodo = () => {
     dispatch({
-        type: "REMOVE_TODO",
-        payload: {
-          id: id
-        },
-      });
-  }
+      type: "REMOVE_TODO",
+      payload: {
+        id: id,
+      },
+    });
+  };
 
   return (
     <div className="flex px-6 py-4 justify-between align-center">
       <div className="flex">
         <div
-          onClick={() => toggleChecked()}
+          onClick={() => todoAction()}
           className={`h-6 w-6 rounded-full bg-grey place-items-center hover:bg-gradient-to-r from-first to-second flex justify-center align-center p-[1px] ${
             isChecked && "bg-gradient-to-r"
           }`}

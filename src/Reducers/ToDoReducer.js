@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
   toDoList: [],
+  filteredList:[]
 };
 
 function ToDoReducer(state = INITIAL_STATE, action) {
@@ -15,6 +16,14 @@ function ToDoReducer(state = INITIAL_STATE, action) {
             isCompleted: false,
           },
         ],
+        filteredList: [
+          ...state.filteredList,
+          {
+            id: state.filteredList.length + 1,
+            todo: action.payload.todo,
+            isCompleted: false,
+          },
+        ]
       };
     }
 
@@ -24,7 +33,12 @@ function ToDoReducer(state = INITIAL_STATE, action) {
         ...state,
         toDoList: state.toDoList.map((todo) =>
           todo.id === itemId
-            ? { ...todo, isCompleted: action.payload.isCompleted }
+            ? { ...todo, isCompleted: !action.payload.isCompleted }
+            : todo
+        ),
+        filteredList: state.filteredList.map((todo) =>
+          todo.id === itemId
+            ? { ...todo, isCompleted: !action.payload.isCompleted }
             : todo
         ),
       };
@@ -34,17 +48,45 @@ function ToDoReducer(state = INITIAL_STATE, action) {
       const itemId = action.payload.id;
       return {
         ...state,
-        toDoList: state.toDoList.filter((todo) =>
-          todo.id !== itemId
-        ),
+        toDoList: state.toDoList.filter((todo) => todo.id !== itemId),
+        filteredList: state.filteredList.filter((todo) => todo.id !== itemId)
       };
     }
+
     case "UPDATE_TODOLIST": {
       return {
         ...state,
-        toDoList: action.payload
+        toDoList: action.payload,
+        filteredList: action.payload,
+
       };
     }
+    case 'ALL': {
+      return {...state,
+        filteredList: [...state.toDoList]
+      }
+  }
+
+    case 'ACTIVE': {
+      return {
+        ...state,
+        filteredList: state.toDoList.filter((todo) => todo.isCompleted === false )
+    } }
+
+    case 'COMPLETED': {
+      return {
+        ...state,
+        filteredList: state.toDoList.filter((todo) => todo.isCompleted === true )}
+    } 
+
+    case 'CLEAR_COMPLETED': {
+      return {
+        ...state,
+        toDoList: state.filteredList.filter((todo) => todo.isCompleted !== true ),
+        filteredList: state.filteredList.filter((todo) => todo.isCompleted !== true )}
+    } 
+
+
     default:
       return state;
   }

@@ -26,9 +26,6 @@ module.exports = {
         'desktopLightTheme': 'url(/src/assets/images/bg-desktop-light.jpg)',
         'mobileDarkTheme': 'url(/src/assets/images/bg-mobile-light.jpg)',
         'mobileLightTheme': 'url(/src/assets/images/bg-mobile-light.jpg)',
-      },backgroundSize: {
-        '30%': '30%',
-        '25': '25rem',
       },
       screens: {
         '3xl': {'max': '2500px'},

@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+
 import iconSun from "../assets/images/icon-sun.svg";
 import iconMoon from "../assets/images/icon-moon.svg";
 
@@ -8,6 +9,7 @@ const Header = () => {
   const { isLight } = useSelector((state) => ({
     ...state.ThemeReducer,
   }));
+  
   const dispatch = useDispatch();
 
   const changeTheme = () => {
