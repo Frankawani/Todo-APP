@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+/**
+ * Add todo item to the list
+ * @returns HTML input element 
+ */
 const AddTodoItem = () => {
   const [todo, setTodo] = useState("");
 
   const { toDoList, isLight } = useSelector((state) => ({
     ...state.ToDoReducer,
-    ...state.ThemeReducer
+    ...state.ThemeReducer,
   }));
 
   const dispatch = useDispatch();
@@ -29,7 +33,11 @@ const AddTodoItem = () => {
 
   return (
     <input
-      className={`w-full px-7 py-2 rounded-sm mt-6 focus:outline-none text-sm ${isLight ? "text-very-dark-grayish-blue bg-white" : "text-light-grayish-blue bg-very-dark-desaturated-blue"}`}
+      className={`w-full px-7 py-2 rounded-sm mt-6 focus:outline-none text-sm ${
+        isLight
+          ? "text-very-dark-grayish-blue bg-white"
+          : "text-light-grayish-blue bg-very-dark-desaturated-blue"
+      }`}
       type="text"
       placeholder="Create a new todo..."
       value={todo}

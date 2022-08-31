@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+/**
+ * Component with active todos counter and filter buttons
+ * @returns Html of FOOTER of the component
+ */
 const Footer = () => {
   const { toDoList } = useSelector((state) => ({
     ...state.ToDoReducer,
   }));
+
   const [value, setValue] = useState(0);
+  const dispatch = useDispatch();
 
   const categories = ["ALL", "ACTIVE", "COMPLETED"];
-
-  const dispatch = useDispatch();
   const activeTodos = toDoList.filter((todo) => todo.isCompleted === false);
 
   const filterList = (e, category) => {
@@ -34,7 +38,7 @@ const Footer = () => {
                   setValue(index);
                 }}
                 key={index}
-                className={`capitalize mr-6 ${
+                className={`capitalize mr-6 pb-1 ${
                   value === index && "border-b-2 border-primary "
                 }`}
               >
@@ -43,7 +47,9 @@ const Footer = () => {
             );
           })}
         </div>
-          <button onClick={(e) => filterList(e, 'CLEAR_COMPLETED')}>Clear Completed</button>
+        <button onClick={(e) => filterList(e, "CLEAR_COMPLETED")}>
+          Clear Completed
+        </button>
       </div>
     </footer>
   );

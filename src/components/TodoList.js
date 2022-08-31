@@ -5,6 +5,10 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import TodoItem from "./TodoItem";
 import Footer from "./Footer";
 
+/**
+ * List of all added todo items with cehck & delete buttons
+ * @returns HTML of TODO list component
+ */
 const TodoList = () => {
   const { toDoList, isLight, filteredList } = useSelector((state) => ({
     ...state.ToDoReducer,
@@ -13,7 +17,13 @@ const TodoList = () => {
 
   const dispatch = useDispatch();
 
+  /**
+   * A function that allows to change an item position after the drag & drop action 
+   * @param {Object} result - object of drag & drop item properties
+   * @returns {Array} of new reordered items
+   */
   function handleOnDragEnd(result) {
+    console.log(result);
     if (!result.destination) return;
     const items = Array.from(toDoList);
     const [reorderedItem] = items.splice(result.source.index, 1);

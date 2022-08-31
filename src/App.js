@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Header from "./components/Header";
 import AddTodoItem from "./components/AddTodoItem";
 import TodoList from "./components/TodoList";
-import Footer from "./components/Footer";
+
 function App() {
   const { isLight } = useSelector((state) => ({
     ...state.ThemeReducer,

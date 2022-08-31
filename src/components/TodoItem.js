@@ -4,21 +4,30 @@ import { useSelector, useDispatch } from "react-redux";
 import checkedIcon from "../assets/images/icon-check.svg";
 import crossIcon from "../assets/images/icon-cross.svg";
 
+/**
+ * A single todo item in the list
+ * @param {id, todo, isCompleted} - a properties of a single item
+ * @returns HTML div element
+ */
 const TodoItem = ({ id, todo, isCompleted }) => {
   const [isChecked, setIsChecked] = useState(isCompleted);
 
-
   const dispatch = useDispatch();
   const { isLight } = useSelector((state) => ({
-    ...state.ThemeReducer
+    ...state.ThemeReducer,
   }));
 
+  /**
+   * Toggle isChecked state of the item in order to use different styles
+   */
   const toggleChecked = () => {
     setIsChecked((prevValue) => {
       return !prevValue;
     });
   };
-
+  /**
+   * Toggle isCompleted status of the item
+   */
   const changeStatus = () => {
     dispatch({
       type: "CHECK_TODO",
@@ -29,11 +38,17 @@ const TodoItem = ({ id, todo, isCompleted }) => {
     });
   };
 
-  const todoAction =  () => {
-     toggleChecked()
-     changeStatus()
-  }
+  /**
+   * Change style and item isCompleted state in the list
+   */
+  const todoAction = () => {
+    toggleChecked();
+    changeStatus();
+  };
 
+  /**
+   * Remove todo item fron the list
+   */
   const removeTodo = () => {
     dispatch({
       type: "REMOVE_TODO",
@@ -44,7 +59,7 @@ const TodoItem = ({ id, todo, isCompleted }) => {
   };
 
   return (
-    <div className="flex px-6 py-4 justify-between align-center">
+    <article className="flex px-6 py-4 justify-between align-center">
       <div className="flex">
         <div
           onClick={() => todoAction()}
@@ -75,7 +90,7 @@ const TodoItem = ({ id, todo, isCompleted }) => {
       <button className="justify-self-end" onClick={() => removeTodo()}>
         <img src={crossIcon} alt="cross icon" />
       </button>
-    </div>
+    </article>
   );
 };
 
