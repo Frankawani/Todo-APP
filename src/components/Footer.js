@@ -1,23 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import FilterButtons from "./FilterButtons";
 
 /**
  * Component with active todos counter and filter buttons
- * @returns Html of FOOTER of the component
+ * @returns HTML of FOOTER of the component
  */
 const Footer = () => {
   const { toDoList } = useSelector((state) => ({
     ...state.ToDoReducer,
   }));
 
-  const [value, setValue] = useState(0);
   const dispatch = useDispatch();
 
-  const categories = ["ALL", "ACTIVE", "COMPLETED"];
   const activeTodos = toDoList.filter((todo) => todo.isCompleted === false);
 
+  /**
+   * 
+   * @param {Event} e click on button
+   * @param {String} category filter parameter 
+   */
   const filterList = (e, category) => {
     e.preventDefault();
     dispatch({

@@ -4,6 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import iconSun from "../assets/images/icon-sun.svg";
 import iconMoon from "../assets/images/icon-moon.svg";
 
+/**
+ * Header with heading and toggle dark/light mode button
+ * @returns HTML element
+ */
 const Header = () => {
   
   const { isLight } = useSelector((state) => ({
@@ -12,6 +16,9 @@ const Header = () => {
   
   const dispatch = useDispatch();
 
+  /**
+   * Toggle theme
+   */
   const changeTheme = () => {
     dispatch({
       type: "TOGGLE",

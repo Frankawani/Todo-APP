@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
+/**
+ * Buttons for filtering the todo list
+ * @returns HTML element with filter buttons
+ */
 const FilterButtons = () => {
 
   const [value, setValue] = useState(0);
@@ -8,6 +12,11 @@ const FilterButtons = () => {
 
   const categories = ["ALL", "ACTIVE", "COMPLETED"];
 
+  /**
+   * 
+   * @param {Event} e 
+   * @param {String} category for filtering the items
+   */
   const filterList = (e, category) => {
     e.preventDefault();
     dispatch({
