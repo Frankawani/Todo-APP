@@ -80,16 +80,16 @@ function ToDoReducer(state = INITIAL_STATE, action) {
     } 
 
     case 'CLEAR_COMPLETED': {
-      return {
-        ...state,
-        toDoList: state.filteredList.filter((todo) => todo.isCompleted !== true ),
-        filteredList: state.filteredList.filter((todo) => todo.isCompleted !== true )}
-    } 
-
-
-    default:
+        return {
+          ...state,
+          toDoList: state.toDoList.filter((todo) => todo.isCompleted !== true ),
+          filteredList: state.toDoList.filter((todo) => todo.isCompleted !== true )
+        }
+    }
+    default:{
       return state;
   }
-}
+}}
 
 export default ToDoReducer;
+
