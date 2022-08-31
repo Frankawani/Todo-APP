@@ -24,23 +24,23 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 Users should be able to:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Add new todos to the list
-- Mark todos as complete
-- Delete todos from the list
-- Filter by all/active/complete todos
-- Clear all completed todos
-- Toggle light and dark mode
-- **Bonus**: Drag and drop to reorder items on the list
+-✅ View the optimal layout for the app depending on their device's screen size
+-✅ See hover states for all interactive elements on the page
+-✅ Add new todos to the list
+-✅ Mark todos as complete
+-✅ Delete todos from the list
+-✅ Filter by all/active/complete todos
+-✅ Clear all completed todos
+-✅ Toggle light and dark mode
+-✅ **Bonus**: Drag and drop to reorder items on the list
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 
-- Solution URL: [My future solution]()
+- Solution URL: [My future solution](https://github.com/tania0808/todo-app#the-challenge)
 - Live Site URL: [AMy future live site]()
 
 ## My process
@@ -52,11 +52,14 @@ Users should be able to:
 - [Drag and Drop](https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd) -Beautiful and Accessible Drag and Drop with react-beautiful-dnd
 - [DnD tutorial](https://www.youtube.com/watch?v=aYZRRyukuIw) - Tutorial how to add Drag and Drop in React
 ### What I learned
-
+- Redux State handling
+- Tailwind Css classes
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- Redux
+- React testing
+- TypeScript
 
 ### Useful resources
 
@@ -68,7 +71,3 @@ Use this section to outline areas that you want to continue focusing on in futur
 - Linkedin - [Tetiana His](https://www.linkedin.com/in/tetiana-his/)
 - Github - [@tania0808](https://github.com/tania0808/)
 
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
