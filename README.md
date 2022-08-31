@@ -49,6 +49,8 @@ Users should be able to:
 
 - [React](https://reactjs.org/) - JS library, create-react-app
 - [Tailwind CSS](https://tailwindcss.com/) - For styles
+- [Drag and Drop](https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd) -Beautiful and Accessible Drag and Drop with react-beautiful-dnd
+- [DnD tutorial](https://www.youtube.com/watch?v=aYZRRyukuIw) - Tutorial how to add Drag and Drop in React
 ### What I learned
 
 
