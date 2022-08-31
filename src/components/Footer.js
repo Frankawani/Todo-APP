@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import FilterButtons from "./FilterButtons";
+
 /**
  * Component with active todos counter and filter buttons
  * @returns Html of FOOTER of the component
@@ -24,30 +26,18 @@ const Footer = () => {
   };
 
   return (
-    <footer className="flex flex-col text-cenetr justify-between px-5 text-xs py-3 text-dark-grayish-blue">
-      <div className="flex justify-between">
-        <p className="align-self-center">
+    <footer className="flex flex-col justify-between px-5 text-xs py-3 text-dark-grayish-blue">
+      <div className="flex justify-between sm:flex-wrap sm:justify-center">
+        <p className="align-self-center basis-1/3 sm:basis-2/4">
           {activeTodos.length} active items left
         </p>
-        <div className="ml-6">
-          {categories.map((btn, index) => {
-            return (
-              <button
-                onClick={(e) => {
-                  filterList(e, btn, index);
-                  setValue(index);
-                }}
-                key={index}
-                className={`capitalize mr-6 pb-1 ${
-                  value === index && "border-b-2 border-primary "
-                }`}
-              >
-                {btn.replace("_", " ").toLowerCase()}
-              </button>
-            );
-          })}
+        <div className="sm:hidden">
+          <FilterButtons />
         </div>
-        <button onClick={(e) => filterList(e, "CLEAR_COMPLETED")}>
+        <button
+          className="sm:basis-2/4 align-self-end basis-1/3 text-right"
+          onClick={(e) => filterList(e, "CLEAR_COMPLETED")}
+        >
           Clear Completed
         </button>
       </div>

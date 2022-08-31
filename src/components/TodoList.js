@@ -23,7 +23,6 @@ const TodoList = () => {
    * @returns {Array} of new reordered items
    */
   function handleOnDragEnd(result) {
-    console.log(result);
     if (!result.destination) return;
     const items = Array.from(toDoList);
     const [reorderedItem] = items.splice(result.source.index, 1);
@@ -46,11 +45,11 @@ const TodoList = () => {
           <ul
             {...provided.droppableProps}
             ref={provided.innerRef}
-            className={`h-fit ${
+            className={`h-fit overflow-hidden ${
               isLight
                 ? "bg-white divide-slate-300"
                 : "bg-very-dark-desaturated-blue divide-slate-700"
-            } mt-8 rounded-sm shadow-lg divide-y flex flex-col`}
+            } mt-9 rounded-sm shadow-lg divide-y flex flex-col rounded-sm`}
           >
             {filteredList.map((item, index) => {
               return (

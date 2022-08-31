@@ -23,9 +23,7 @@ module.exports = {
       },
       backgroundImage: {
         'desktopDarkTheme': 'url(/src/assets/images/bg-desktop-dark.jpg)',
-        'desktopLightTheme': 'url(/src/assets/images/bg-desktop-light.jpg)',
-        'mobileDarkTheme': 'url(/src/assets/images/bg-mobile-light.jpg)',
-        'mobileLightTheme': 'url(/src/assets/images/bg-mobile-light.jpg)',
+        'desktopLightTheme': 'url(/src/assets/images/bg-desktop-light.jpg)'
       },
       screens: {
         '3xl': {'max': '2500px'},
@@ -41,7 +39,11 @@ module.exports = {
         'md': {'max': '967px'},
         // => @media (max-width: 767px) { ... }
   
-        'sm': {'max': '569px'},
+        'min-sm': {'min': '720px'},
+        
+        'sm': {'max': '720px'},
+        // => @media (max-width: 639px) { ... }
+        'xs': {'max': '569px'},
         // => @media (max-width: 639px) { ... }
       },
     },
