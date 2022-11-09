@@ -1,6 +1,6 @@
 # Frontend Mentor - Todo app solution
 
-This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help me improve my coding skills by building realistic projects. 
+This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help me improve my coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -40,8 +40,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [My future solution](https://github.com/tania0808/todo-app#the-challenge)
-- Live Site URL: [My live site](https://todo-list-tania-his.netlify.app/)
+- Solution URL: [My future solution](https://github.com/Frankawani/Todo-App)
+- Live Site URL: [My live site](https://frank-todo-app.web.app/)
 
 ## My process
 
@@ -51,7 +51,9 @@ Users should be able to:
 - [Tailwind CSS](https://tailwindcss.com/) - For styles
 - [Drag and Drop](https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd) -Beautiful and Accessible Drag and Drop with react-beautiful-dnd
 - [DnD tutorial](https://www.youtube.com/watch?v=aYZRRyukuIw) - Tutorial how to add Drag and Drop in React
+
 ### What I learned
+
 - Redux State handling
 - Tailwind Css classes
 
@@ -59,7 +61,6 @@ Users should be able to:
 
 - Redux
 - React testing
-- TypeScript
 
 ### Useful resources
 
@@ -67,7 +68,5 @@ Users should be able to:
 
 ## Author
 
-- Website - [Tania](https://portfolio-tania-his.netlify.app/)
-- Linkedin - [Tetiana His](https://www.linkedin.com/in/tetiana-his/)
-- Github - [@tania0808](https://github.com/tania0808/)
-
+- Linkedin - [Tetiana His](https://www.linkedin.com/in/frankawani/)
+- Github - [@frankawani](https://github.com/Frankawani)
